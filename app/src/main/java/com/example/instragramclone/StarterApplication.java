@@ -18,30 +18,21 @@ public class StarterApplication extends Application
     {
         super.onCreate();
     
-//        Parse.initialize(new Parse.Configuration.Builder(this)
-//                                 .applicationId("YOUR_APP_ID")
-//                                 // if defined
-//                                 .clientKey("YOUR_CLIENT_KEY")
-//                                 .server("http://localhost:1337/parse/")
-//                                 .build()
-//        );
-//
-        // Enable Local Datastore.
-//        Parse.enableLocalDatastore(this);
-
         // Add your initialization code here
         Parse.initialize(new Parse.Configuration.Builder(getApplicationContext())
-
+        
                                  .applicationId("YOUR_APP_ID")
                                  // if defined
                                  .clientKey("YOUR_CLIENT_KEY")
-                                 .server("http://localhost:1337/parse/")
+
+                                 // Add your Server IP Addrses
+                                 .server("http://18.0.0.0/parse/") // Add Your Server IP. Do not add "PORT Number" such as ip:80 or ip:1337
                                  .build()
         );
 
         ParseObject object = new ParseObject("ExampleObject");
-        object.put("myNumber", "123");
-        object.put("myString", "rob");
+        object.put("myNumber", "455");
+        object.put("myString", "Nov");
 
         object.saveInBackground(new SaveCallback() {
           @Override
